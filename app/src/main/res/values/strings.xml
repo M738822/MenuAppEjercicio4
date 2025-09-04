@@ -1,0 +1,18 @@
+<resources>
+    <!-- Nombres -->
+    <string name="app_name">ListaComida</string>
+    <string name="platillo_postre">Postre</string>
+    <string name="platillo_pozole">Pozole</string>
+    <string name="platillo_pizza">Pizza</string>
+    <string name="platillo_desayuno">Desayuno</string>
+    <string name="platillo_tacos">Tacos</string>
+    <string name="platillo_hamburger">Hamburguesa</string>
+
+    <!-- Ofertas -->
+    <string name="oferta_postre">Dulzura con 10% off</string>
+    <string name="oferta_pozole">Tradición con 20% menos</string>
+    <string name="oferta_pizza">Pizzas 2x1 ¡hoy!</string>
+    <string name="oferta_desayuno">Combo mañanero desde $70</string>
+    <string name="oferta_tacos">Martes de tacos 2x1</string>
+    <string name="oferta_hamburger">Burger + papas ¡gratis!</string>
+</resources>
