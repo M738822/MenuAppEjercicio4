@@ -13,9 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.graphics.Color
 import com.example.listacomida_2025_i.model.Platillo
 
 @Composable
@@ -25,13 +23,14 @@ fun MenuCard(platillo: Platillo, modifier: Modifier = Modifier) {
             .padding(12.dp)
             .fillMaxWidth()
             .heightIn(min = 140.dp),
-        elevation = CardDefaults.cardElevation(6.dp)
+        elevation = CardDefaults.cardElevation(6.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+            contentColor = MaterialTheme.colorScheme.onSecondaryContainer
+        )
     ) {
-        Row(
-            modifier = Modifier
-                .padding(16.dp)
-        ) {
-            // Imagen circular
+        Row(modifier = Modifier.padding(16.dp)) {
+            // Imagen del platillo
             Image(
                 painter = painterResource(id = platillo.imagenId),
                 contentDescription = stringResource(id = platillo.nombreId),
@@ -44,33 +43,34 @@ fun MenuCard(platillo: Platillo, modifier: Modifier = Modifier) {
 
             Spacer(modifier = Modifier.width(20.dp))
 
+            // Información del platillo
             Column(
                 modifier = Modifier.fillMaxHeight(),
                 verticalArrangement = Arrangement.Center
             ) {
-                // Nombre del platillo
+                // Nombre del platillo - Poppins
                 Text(
                     text = stringResource(id = platillo.nombreId),
                     style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold
+                    color = MaterialTheme.colorScheme.primary
                 )
 
                 Spacer(modifier = Modifier.height(6.dp))
 
-                // Precio
+                // Precio - Merriweather
                 Text(
                     text = "$${platillo.precio}",
-                    style = MaterialTheme.typography.bodyLarge
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurface
                 )
 
                 Spacer(modifier = Modifier.height(6.dp))
 
-                // Oferta
+                // Oferta - Oswald
                 Text(
                     text = stringResource(id = platillo.ofertaId),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = Color.Red,
-                    fontWeight = FontWeight.Bold
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.error
                 )
             }
         }
